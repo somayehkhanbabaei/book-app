@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import BooksSectionPage from "./components/pages/books-section.js";
+import BookDetail from "./components/pages/book-detail.js";
+import PageNotFound from "./components/pages/page-not-found.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route path="/" exact component={BooksSectionPage}/>  
+          <Route path="/books/category/:categoryName" exact component={BooksSectionPage}/>  
+          <Route path="/book/:bookID" component={BookDetail}/> 
+          <Route component={PageNotFound}/>
+        </Switch>
+      </Router>
+    
+    );
+  }
 }
 
 export default App;
