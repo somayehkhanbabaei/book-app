@@ -1,12 +1,12 @@
 import React from 'react';
 import Book from './book';
 
-const BooksContainer = ()=> {
+const BooksContainer = (props)=> {
     return(
         <div className="books-container">
-            <Book/>
-            <Book/>
-            <Book/>
+            {props.books.map((e,i) => {
+                return(<Book key={i} /> )
+            })}
         </div>
     )
 
