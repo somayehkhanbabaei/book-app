@@ -9,7 +9,7 @@ const BooksSection = props => {
           <div className="section-title">
             <h1> HTML Books </h1>
           </div>
-         <BooksContainer/>
+            <BooksContainer/>
         </div>
       </section>
     </div>
