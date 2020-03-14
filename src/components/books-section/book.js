@@ -23,7 +23,7 @@ const Book = (props) => {
         <p> By <em> {bookInfo.author} </em></p>
       </div>
       <div className="book-call-to-action">
-        <a to={"book/" + bookInfo.id} className="btn btn-highlight"> Detail</a>
+        <Link to={"/book/" + bookInfo.id} className="btn btn-highlight"> Detail</Link>
       </div>
     </div>
   </div>
