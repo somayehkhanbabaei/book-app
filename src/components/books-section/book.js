@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom'
 
 const Book = (props) => {
   let bookInfo = {
-    image: props.book.volumeInfo.imageLinks.thumbnail,
+    image: props.book.volumeInfo.imageLinks ? props.book.volumeInfo.imageLinks.thumbnail :" https://via.placeholder.com/350x150",
+
     title: props.book.volumeInfo.title,
     author:props.book.volumeInfo.author,
     id:props.book.id
