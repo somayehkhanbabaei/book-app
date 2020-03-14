@@ -6,7 +6,7 @@ let BookDetail = (props) => {
     return(
     <section id="book-detail">
     <div className="container">
-      <BookContainer/>
+      <BookContainer book ={props.book}/>
     </div>
   </section>
     )
