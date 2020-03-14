@@ -2,7 +2,10 @@ import React from "react";
 
 
 
-const Book = () => {
+const Book = (props) => {
+  let bookInfo = {
+    image: props.book.volumeInfo.imageLinks.thumbnail,
+  }
   return (
     <div className="book">
     <div className="book-img">
