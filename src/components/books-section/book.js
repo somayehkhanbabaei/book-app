@@ -6,9 +6,8 @@ import {Link} from 'react-router-dom'
 const Book = (props) => {
   let bookInfo = {
     image: props.book.volumeInfo.imageLinks ? props.book.volumeInfo.imageLinks.thumbnail :" https://via.placeholder.com/350x150",
-
-    title: props.book.volumeInfo.title,
-    author:props.book.volumeInfo.author,
+    title: props.book.volumeInfo ? props.book.volumeInfo.title :'Can'/'t Not Found Title' ,
+    author: props.book.volumeInfo ? props.book.volumeInfo.author : 'Can'/'t Not Found Aouthor' ,
     id:props.book.id
   }
   return (
