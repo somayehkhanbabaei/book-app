@@ -24,6 +24,21 @@ class BooksSectionPage extends Component {
       })
   }
 
+  componentDidUpdate(previousProps){
+    if(previousProps.categoryName !== this.props.categoryName){
+      this.setState({
+        isLoding: true,
+      })
+      axios.get("https://www.googleapis.com/books/v1/volumes?q=" + this.props.categoryName)
+      .then((response)=>{
+        this.setState({
+          books: response.data.items,
+          isLoding: false
+        })
+      })
+    }
+  }
+
   render() {
 
     return (
