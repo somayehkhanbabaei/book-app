@@ -3,6 +3,7 @@ import Header from "../header/header";
 import Footer from "../footer/footer";
 import BookDetail from "../books-detail/book-detail.js";
 import axios from 'axios';
+import Loader from "../loader";
 
 class BookDetailPage extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class BookDetailPage extends Component {
     return (
       <div className="has-fixed-footer">
         <Header />
-        {this.state.isLoading ? <p> Loading... </p> : <BookDetail /> }
+        {this.state.isLoading ? <Loader/> : <BookDetail /> }
         <Footer />
       </div>
     );

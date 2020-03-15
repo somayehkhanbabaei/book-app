@@ -3,6 +3,7 @@ import Header from "../header/header";
 import Footer from "../footer/footer";
 import BooksSection from '../books-section/books-section.js';
 import axios from 'axios';
+import Loader from '../loader';
 
 
 class BooksSectionPage extends Component {
@@ -45,7 +46,7 @@ class BooksSectionPage extends Component {
       <div className="has-fixed-footer">
         <Header/>
         {this.state.isLoding ?
-          <p> isLoding... </p> :
+          <Loader/> :
           <BooksSection title={this.props.categoryName} books={this.state.books}/>
         }
         <Footer/>
